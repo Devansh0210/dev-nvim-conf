@@ -18,11 +18,45 @@ require("formatter").setup {
           exe = "verible-verilog-format",
           args = {
             "--indentation_spaces 4",
+            "--indentation_spaces 4",
+            "--assignment_statement_alignment=align",
+            "--case_items_alignment=align",
+            "--module_net_variable_alignment=align",
+            "--named_parameter_alignment=align",
+            "--named_port_alignment=align",
+            "--column_limit=200",
+            "--formal_parameters_alignment=align",
+            "--formal_parameters_indentation=indent",
+            "--port_declarations_alignment=align",
             "-"
           },
           stdin = true,
         }
       end
+    },
+  
+
+    systemverilog = {
+
+        function()
+            return {
+                exe = "verible-verilog-format",
+                args = {
+                    "--indentation_spaces 4",
+                    "--assignment_statement_alignment=align",
+                    "--case_items_alignment=align",
+                    "--module_net_variable_alignment=align",
+                    "--named_parameter_alignment=align",
+                    "--named_port_alignment=align",
+                    "--column_limit=200",
+                    "--formal_parameters_alignment=align",
+                    "--formal_parameters_indentation=indent",
+                    "--port_declarations_alignment=align",
+                    "-"
+                },
+                stdin = true,
+            }
+        end
     }
   }
 }

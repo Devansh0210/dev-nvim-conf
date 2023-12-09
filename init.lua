@@ -1,6 +1,6 @@
 -- print("hello")
 require("packer_conf")
-require("kmaps")
+require("remap")
 require("set")
 
 
