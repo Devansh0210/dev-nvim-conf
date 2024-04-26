@@ -1,3 +1,13 @@
+require("nvim-treesitter.install").prefer_git = true
+vim.env.CC = 'gcc'
+vim.env.CFLAGS = '-std=c99'
+
+-- print(vim.fn.getenv("CC"))
+-- local ex_vim = 
+require("nvim-treesitter.install").compilers =  {"gcc"}
+-- print(vim.inspect(ex_vim));
+
+
 require'nvim-treesitter.configs'.setup {
     -- A list of parser names, or "all"
     ensure_installed = { "vim", "verilog", "python", "bash", "vimdoc", "c", "lua", "rust" },
@@ -11,6 +21,7 @@ require'nvim-treesitter.configs'.setup {
     highlight = {
         --                   -- `false` will disable the whole extension
         disable = {"verilog", "systemverilog"},
+        -- disable = {"verilog", "systemverilog"},
         enable = true,
         --
         --                           -- Setting this to true will run `:h syntax` and tree-sitter at the same time.

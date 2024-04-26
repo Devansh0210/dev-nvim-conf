@@ -5,7 +5,7 @@ return require('packer').startup(function(use)
       use 'wbthomason/packer.nvim'
 
       use {
-          'nvim-telescope/telescope.nvim', tag = '0.1.0',
+          'nvim-telescope/telescope.nvim', tag = '0.1.5',
           --              -- or                            , branch = '0.1.x',
           requires = { {'nvim-lua/plenary.nvim'} }
       }
@@ -89,7 +89,16 @@ return require('packer').startup(function(use)
 		}
     })
 
-    use 'neovim/nvim-lspconfig'
-    use 'simrat39/rust-tools.nvim'
+    use({
+        "kylechui/nvim-surround",
+        -- tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+        config = function()
+            require("nvim-surround").setup({
+                -- Configuration here, or leave empty to use defaults
+            })
+        end
+    })
+
+    use { "jbyuki/venn.nvim" }
   end)
 
